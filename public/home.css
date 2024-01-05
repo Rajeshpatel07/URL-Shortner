@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap');
+
+html { 
+    background: url(space\ background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+*{
+    margin: 0%;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 400px;
+    position: relative;
+}
+h1{
+    position: absolute;
+    top: 50px;
+    left: 1em;
+    color: black;
+    font-size: 2.6em;
+    font-family:Rubik Doodle Shadow;
+}
+input{
+    background: rgba(0, 0, 0, 0.483);
+    border-radius: 8px;
+    border: solid rgba(0, 0, 0, 0.305) 1px;
+    color: inherit;
+    outline-color: brown;
+    font-size: 1.2em;
+    padding: 1vh 0vh;
+    width: 15em;
+    color: whitesmoke;
+}
+button{
+    font-size: 1em;
+    outline: none;
+    border: none;
+    background-color:rgba(0, 0, 0, 0.626);
+    color:whitesmoke;
+    font-weight: 600;
+    padding: 1vh;
+    border-radius: 16px;
+    font-family: Rubik Doodle Shadow;
+}
+::placeholder{
+    color: whitesmoke;
+    margin-left: 1em;
+    padding-left: 1vw;
+    font-weight: 600;
+    font-family:fantasy; 
+}
+#loader{
+    width: 300px;
+    height: 150px;
+    margin-top: 2em;
+    border-radius: 10px;
+}
+#link{
+    background: rgba(0, 0, 0, 0.483);
+    padding: 1vh;
+    color: whitesmoke;
+    margin-top:2em;
+    border-radius: 8px;
+    width: 16em;
+    font-size: 1.5em;
+}
+#copy{
+    width: 20px;
+    height: 25px;
+    float: right;
+    margin-right: 2px;
+    margin-top: 1px;
+}
+h5{
+  display:inline;
+}
