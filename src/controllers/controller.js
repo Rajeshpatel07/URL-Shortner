@@ -1,7 +1,6 @@
 import { nanoid } from 'nanoid';
 import db from '../models/links.js';
 import dotenv from 'dotenv';
-const BASE='http://localhost:5000/';
 dotenv.config();
 
 export const home = (req, res) => {
@@ -19,15 +18,17 @@ export const upload = async (req, res) => {
         URL: link,
         short: randomid
       });
-      const newurl=new URL(randomid,BASE);
+      const newurl=new URL(randomid,process.env.BASE);
       res.json({opurl:newurl.href})
     }
     else {
-      const newurl=new URL(exurl.short,BASE);
+      const newurl=new URL(exurl.short,process.env.BASE);
       res.json({opurl:newurl.href})
     }
   } catch (err) {
-    throw new Error(err);
+    res.json({
+      message:"Server Responding try again."
+    })
   }
 }
 

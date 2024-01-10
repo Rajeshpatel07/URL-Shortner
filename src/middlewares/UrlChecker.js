@@ -19,6 +19,8 @@ function UrlChecker(req,res,next){
         res.json({
             message:"In valid URL"
         })
+        // throw new Error("Please Enter valid url")
+
     }
 }
 

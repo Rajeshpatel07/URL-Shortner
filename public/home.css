@@ -38,7 +38,7 @@ input{
     border-radius: 8px;
     border: solid rgba(0, 0, 0, 0.305) 1px;
     color: inherit;
-    outline-color: brown;
+    outline-color:rgba(0, 0, 0, 0.483);
     font-size: 1.2em;
     padding: 1vh 0vh;
     width: 15em;
@@ -86,4 +86,12 @@ button{
 }
 h5{
   display:inline;
+}
+p{
+    font-size: 1.5em;
+    color:pink;
+    margin-top:3vh;
+    margin-right:2vw;
+    font-weight: 500;
+    
 }

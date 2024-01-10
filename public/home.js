@@ -3,14 +3,28 @@ const loader=document.querySelector('#loader')
 const div=document.querySelector('#link')
 const url=document.querySelector('h5')
 const copyimg=document.querySelector('#copy')
+const err=document.querySelector('p')
 
 loader.style.display='none'
 div.style.display='none'
+err.style.display='none'
 
 form.addEventListener('submit',async (e)=>{
     e.preventDefault();
-    loader.style.display='block'
     div.style.display='none'
+    err.style.display='none'
+
+    const formdata=form.link.value
+    
+    const link=formdata.trim()
+    if(link.length===0){
+        err.style.display='block'
+        return err.innerText="Please Enter URL"
+    }
+    
+    console.log(link)
+    loader.style.display='block'
+
 
     setTimeout(()=>{
         loader.style.display='none'
@@ -27,7 +41,6 @@ form.addEventListener('submit',async (e)=>{
         },4000);
     })
 
-    const link=form.link.value
 
    try{
     const req=await fetch('/upload',{
@@ -39,9 +52,15 @@ form.addEventListener('submit',async (e)=>{
     })
 
     const res=await req.json();
+    console.log(res)
     
     if(res){
-        url.innerText=res.opurl;
+        if(res.opurl){
+            url.innerText=res.opurl;
+        }
+        if(res.message){
+            url.innerText=res.message;
+        }
     }else{
         url.innerText='Please try again..'
     }
